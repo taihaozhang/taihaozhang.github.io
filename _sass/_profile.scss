@@ -1,0 +1,106 @@
+/* Personal content additions; retain the template's academic layout. */
+.author__native-name {
+  margin: .45em 0 .6em;
+  color: $gray;
+  letter-spacing: .02em;
+}
+
+.author__avatar img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
+.page__content {
+  line-height: 1.8;
+
+  h1[id] { scroll-margin-top: 4.5rem; }
+
+  .phd-notice {
+    margin: 1.5em 0;
+    padding: .9em 1.15em;
+    background: #f2f6fb;
+    border-left: 3px solid $link-color;
+    p { margin: 0; }
+  }
+
+  .publication-note { color: $gray; font-size: .9em; }
+
+  .paper-box {
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.7em 0;
+
+    .paper-box-image {
+      order: 1;
+      min-width: 0;
+      max-width: 100%;
+      padding: .75rem;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      a { width: 100%; }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-width: none;
+        box-shadow: none;
+        object-fit: contain;
+      }
+    }
+
+    .paper-box-text { order: 2; min-width: 0; padding-left: 0; max-width: 100%; }
+    h3 { margin: 0 0 .65em; line-height: 1.45; font-size: 1.08em; color: $darker-gray; }
+
+    @include breakpoint($medium) {
+      flex-wrap: nowrap;
+      .paper-box-image { flex: 0 0 31%; }
+      .paper-box-text { flex: 1; }
+    }
+  }
+
+  .paper-venue { font-size: .9em; font-style: italic; }
+
+  .paper-status {
+    display: inline-block;
+    margin: 0 0 .2em .45em;
+    padding: .1em .6em;
+    border-radius: 3px;
+    background: #f2f4f7;
+    color: #4d5968;
+    font-size: .83em;
+    font-style: normal;
+    white-space: nowrap;
+  }
+
+  .paper-status--accepted { background: #edf7f1; color: #246545; }
+
+  .paper-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .6em 1em;
+    margin-top: .8em;
+    font-size: .85em;
+    a { white-space: nowrap; }
+    span { color: $gray; }
+  }
+
+  .education-entry { margin: 1.25em 0; p { margin-bottom: 0; } }
+  .education-date {
+    display: block;
+    color: $gray;
+    font-size: .9em;
+    @include breakpoint($medium) { float: right; margin-left: 1em; }
+  }
+}
+
+@media (max-width: 924px) {
+  .profile_box { flex-wrap: wrap; }
+  .author__urls-wrapper { margin-left: .4em; }
+  .author__native-name { font-size: .9em; }
+}
+
+@media (max-width: 767px) {
+  .page__content .paper-box .paper-box-image { max-width: 320px; margin: 0 auto; }
+}
